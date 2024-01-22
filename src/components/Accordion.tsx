@@ -29,7 +29,7 @@ const Accordion = ({
   return (
     <Root type={type} className={cn("", className)} {...props}>
       {items.map(({ header, content }) => (
-        <AccordionItem value={header}>
+        <AccordionItem value={header} key={header}>
           <AccordionHeader>
             <AccordionTrigger>
               {header}
