@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "../lib/utils";
 import {
   Root,
   AccordionSingleProps,
@@ -6,37 +6,57 @@ import {
   AccordionItem,
   AccordionContent,
   AccordionTrigger,
+  AccordionMultipleProps,
 } from "@radix-ui/react-accordion";
-import React, { ReactNode } from "react";
+import React from "react";
 
-interface AccordionProps extends AccordionSingleProps {
-  variant: string;
-  dropDownIcon: ReactNode;
+interface AccordionProp {
+  classes?: {
+    container?: string;
+    content?: string;
+    contentWrapper?: string;
+    heading?: string;
+    headingWrapper?: string;
+    itemWrapper?: string;
+    subtitle?: string;
+  };
+  collapsible: boolean;
+  defaultValue: string | string[];
+  variant?: string;
   items: {
-    header: string;
+    value: string;
+    heading: string;
+    subtitle?: string;
     content: string;
   }[];
-};
+}
 
 const Accordion = ({
-  className,
-  dropDownIcon,
+  classes,
+  collapsible = true,
   items,
-  type="single",
   variant,
   ...props
-}: AccordionProps) => {
+}: AccordionProp & (AccordionMultipleProps | AccordionSingleProps)) => {
   return (
-    <Root type={type} className={cn("", className)} {...props}>
-      {items.map(({ header, content }) => (
-        <AccordionItem value={header} key={header}>
-          <AccordionHeader>
+    <Root collapsible={collapsible} className={cn("", classes?.container)} {...props}>
+      {items.map(({ heading, subtitle, content, value }) => (
+        <AccordionItem
+          className={cn("", classes?.itemWrapper)}
+          value={value ? value : ""}
+          key={heading}
+        >
+          <AccordionHeader className={cn("", classes?.headingWrapper)}>
             <AccordionTrigger>
-              {header}
-              {dropDownIcon}
+              <span className={cn("", classes?.heading)}>{heading}</span>
+              <span className={cn("", classes?.subtitle)}>
+                {subtitle && subtitle}
+              </span>
             </AccordionTrigger>
           </AccordionHeader>
-          <AccordionContent>{content}</AccordionContent>
+          <AccordionContent className={cn("", classes?.contentWrapper)}>
+            <span className={cn("", classes?.content)}>{content}</span>
+          </AccordionContent>
         </AccordionItem>
       ))}
     </Root>
