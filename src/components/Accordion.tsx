@@ -1,27 +1,26 @@
-import { cn } from "../lib/utils";
 import {
-  Root,
-  AccordionSingleProps,
-  AccordionHeader,
-  AccordionItem,
   AccordionContent,
+  AccordionContentProps,
+  AccordionHeader,
+  AccordionImplSingleProps,
+  AccordionItem,
+  AccordionItemProps,
   AccordionTrigger,
-  AccordionMultipleProps,
+  AccordionTriggerProps,
+  Root,
 } from "@radix-ui/react-accordion";
+import { cn } from "../lib/utils";
 import React from "react";
 
 interface AccordionProp {
   classes?: {
     container?: string;
     content?: string;
-    contentWrapper?: string;
-    heading?: string;
-    headingWrapper?: string;
-    itemWrapper?: string;
+    item?: string;
     subtitle?: string;
+    trigger: string;
   };
-  collapsible: boolean;
-  defaultValue: string | string[];
+  defaultValue: string;
   variant?: string;
   items: {
     value: string;
@@ -33,34 +32,66 @@ interface AccordionProp {
 
 const Accordion = ({
   classes,
-  collapsible = true,
   items,
   variant,
   ...props
-}: AccordionProp & (AccordionMultipleProps | AccordionSingleProps)) => {
+}: AccordionProp & AccordionImplSingleProps) => {
   return (
-    <Root collapsible={collapsible} className={cn("", classes?.container)} {...props}>
+    <AccordionRoot className={classes?.container} {...props}>
       {items.map(({ heading, subtitle, content, value }) => (
-        <AccordionItem
-          className={cn("", classes?.itemWrapper)}
-          value={value ? value : ""}
-          key={heading}
-        >
-          <AccordionHeader className={cn("", classes?.headingWrapper)}>
-            <AccordionTrigger>
-              <span className={cn("", classes?.heading)}>{heading}</span>
+        <Item className={classes?.item} value={value} key={heading}>
+          <AccordionHeader>
+            <Trigger className={classes?.trigger}>
+              {heading}
               <span className={cn("", classes?.subtitle)}>
                 {subtitle && subtitle}
               </span>
-            </AccordionTrigger>
+            </Trigger>
           </AccordionHeader>
-          <AccordionContent className={cn("", classes?.contentWrapper)}>
-            <span className={cn("", classes?.content)}>{content}</span>
-          </AccordionContent>
-        </AccordionItem>
+          <Content className={classes?.content}>
+            {content}
+          </Content>
+        </Item>
       ))}
+    </AccordionRoot>
+  );
+};
+
+const AccordionRoot = ({
+  children,
+  className,
+  collapsible,
+  ...props
+}: AccordionImplSingleProps) => {
+  return (
+    <Root className={cn("", className)} type="single" {...props} collapsible>
+      {children}
     </Root>
   );
 };
+
+const Item = ({ children, className, value, ...props }: AccordionItemProps) => {
+  return (
+    <AccordionItem className={cn("", className)} value={value} {...props}>
+      {children}
+    </AccordionItem>
+  );
+};
+
+const Trigger = ({ children, className, ...props }: AccordionTriggerProps) => {
+  return (
+    <AccordionTrigger className={cn("", className)} {...props}>
+      {children}
+    </AccordionTrigger>
+  );
+};
+
+const Content = ({children, className, ...props}: AccordionContentProps) => {
+  return (
+    <AccordionContent className={cn("", className)} {...props}>
+      {children}
+    </AccordionContent>
+  )
+}
 
 export default Accordion;
