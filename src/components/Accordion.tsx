@@ -72,15 +72,7 @@ const AccordionRoot = ({
   ...props
 }: AccordionImplSingleProps) => {
   return (
-    <Root
-      className={cn(
-        "flex flex-col gap-3 rounded-md border border-slate-200 p-3",
-        className,
-      )}
-      type="single"
-      {...props}
-      collapsible
-    >
+    <Root className={cn("", className)} type="single" {...props} collapsible>
       {children}
     </Root>
   );
@@ -89,7 +81,7 @@ const AccordionRoot = ({
 const Item = ({ children, className, value, ...props }: AccordionItemProps) => {
   return (
     <AccordionItem
-      className={cn("rounded-md border", className)}
+      className={cn("border-b border-b-slate-300 last:border-0", className)}
       value={value}
       {...props}
     >
@@ -108,25 +100,37 @@ const Trigger = ({
   return (
     <AccordionTrigger
       className={cn(
-        "group flex w-full items-center justify-between p-4",
+        "group flex gap-4 w-full items-center justify-between p-4 text-left",
         className,
       )}
       {...props}
     >
-      <div>
-        <span className={cn("", classes?.heading)}>{heading}</span>
-        <span className={cn("", classes?.subtitle)}>
+      <div className="flex flex-col gap-1">
+        <span className={cn("text-base", classes?.heading)}>{heading}</span>
+        <span className={cn("text-xs", classes?.subtitle)}>
           {subtitle && subtitle}
         </span>
       </div>
-      <i className="ri-arrow-down-s-line block transition-transform group-data-[state=open]:rotate-180"></i>
+      <i
+        className={cn(
+          "ri-arrow-down-s-line",
+          "transition-transform group-data-[state=open]:rotate-180",
+        )}
+      ></i>
     </AccordionTrigger>
   );
 };
 
 const Content = ({ children, className, ...props }: AccordionContentProps) => {
   return (
-    <AccordionContent className={cn("", className)} {...props}>
+    <AccordionContent
+      className={cn(
+        "text-balance px-4 pb-4 text-justify text-sm transition-[height]",
+        "data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown",
+        className,
+      )}
+      {...props}
+    >
       {children}
     </AccordionContent>
   );
