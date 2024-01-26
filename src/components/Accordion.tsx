@@ -48,7 +48,12 @@ const Accordion = ({
   ...props
 }: AccordionProp & AccordionImplSingleProps) => {
   return (
-    <AccordionRoot className={classes?.container} {...props}>
+    <AccordionRoot
+      className={cn(classes?.container, {
+        "border p-4 rounded-md": variant === "bordered",
+      })}
+      {...props}
+    >
       {items.map(({ heading, subtitle, content, value }) => (
         <Item className={classes?.item} value={value} key={heading}>
           <AccordionHeader>
@@ -69,10 +74,11 @@ const AccordionRoot = ({
   children,
   className,
   collapsible,
+  variant,
   ...props
-}: AccordionImplSingleProps) => {
+}: AccordionImplSingleProps & { variant?: string }) => {
   return (
-    <Root className={cn("", className)} type="single" {...props} collapsible>
+    <Root className={className} type="single" {...props} collapsible>
       {children}
     </Root>
   );
@@ -100,7 +106,7 @@ const Trigger = ({
   return (
     <AccordionTrigger
       className={cn(
-        "group flex gap-4 w-full items-center justify-between p-4 text-left",
+        "group flex w-full items-center justify-between gap-4 p-4 text-left",
         className,
       )}
       {...props}
