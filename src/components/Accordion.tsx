@@ -22,6 +22,7 @@ interface AccordionProp {
   };
   defaultValue?: string;
   variant?: string;
+  bordered?: boolean;
   items: {
     value: string;
     heading: string;
@@ -44,6 +45,7 @@ const Accordion = ({
   classes,
   items,
   variant,
+  bordered,
   ...props
 }: AccordionProp & AccordionImplSingleProps) => {
   return (
@@ -51,7 +53,7 @@ const Accordion = ({
       type="single"
       collapsible
       className={cn(classes?.container, {
-        "rounded-md border p-4": variant === "bordered",
+        "rounded-md border p-4": bordered,
       })}
       {...props}
     >

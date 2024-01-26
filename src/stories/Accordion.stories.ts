@@ -48,7 +48,7 @@ export const AccordionWithDefaultValue: Story = {
 
 export const BorderedVariant: Story = {
   args: {
-    variant: "bordered",
+    bordered: true,
     defaultValue: "item-1",
     items: items,
   },
