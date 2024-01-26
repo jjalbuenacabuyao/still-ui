@@ -1,10 +1,8 @@
 import {
   AccordionContent,
-  AccordionContentProps,
   AccordionHeader,
   AccordionImplSingleProps,
   AccordionItem,
-  AccordionItemProps,
   AccordionTrigger,
   AccordionTriggerProps,
   Root,
@@ -20,6 +18,7 @@ interface AccordionProp {
     item?: string;
     subtitle?: string;
     trigger: string;
+    heading: string;
   };
   defaultValue?: string;
   variant?: string;
@@ -48,51 +47,47 @@ const Accordion = ({
   ...props
 }: AccordionProp & AccordionImplSingleProps) => {
   return (
-    <AccordionRoot
+    <Root
+      type="single"
+      collapsible
       className={cn(classes?.container, {
-        "border p-4 rounded-md": variant === "bordered",
+        "rounded-md border p-4": variant === "bordered",
       })}
       {...props}
     >
       {items.map(({ heading, subtitle, content, value }) => (
-        <Item className={classes?.item} value={value} key={heading}>
-          <AccordionHeader>
-            <Trigger
-              className={classes?.trigger}
-              heading={heading}
-              subtitle={subtitle}
-            />
-          </AccordionHeader>
-          <Content className={classes?.content}>{content}</Content>
-        </Item>
+        <AccordionItem
+          className={cn(
+            "border-b border-b-slate-300 last:border-0",
+            classes?.item,
+          )}
+          value={value}
+          key={heading}
+        >
+          <Trigger
+            className={cn(
+              "group flex w-full items-center justify-between gap-4 p-4 text-left",
+              classes?.trigger,
+            )}
+            classes={{
+              heading: cn("text-base", classes?.heading),
+              subtitle: cn("text-xs", classes?.subtitle)
+            }}
+            heading={heading}
+            subtitle={subtitle}
+          />
+          <AccordionContent
+            className={cn(
+              "text-balance px-4 pb-4 text-justify text-sm transition-[height]",
+              "data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown",
+              classes?.content,
+            )}
+          >
+            {content}
+          </AccordionContent>
+        </AccordionItem>
       ))}
-    </AccordionRoot>
-  );
-};
-
-const AccordionRoot = ({
-  children,
-  className,
-  collapsible,
-  variant,
-  ...props
-}: AccordionImplSingleProps & { variant?: string }) => {
-  return (
-    <Root className={className} type="single" {...props} collapsible>
-      {children}
     </Root>
-  );
-};
-
-const Item = ({ children, className, value, ...props }: AccordionItemProps) => {
-  return (
-    <AccordionItem
-      className={cn("border-b border-b-slate-300 last:border-0", className)}
-      value={value}
-      {...props}
-    >
-      {children}
-    </AccordionItem>
   );
 };
 
@@ -104,41 +99,25 @@ const Trigger = ({
   ...props
 }: TriggerProps & AccordionTriggerProps) => {
   return (
-    <AccordionTrigger
-      className={cn(
-        "group flex w-full items-center justify-between gap-4 p-4 text-left",
-        className,
-      )}
-      {...props}
-    >
-      <div className="flex flex-col gap-1">
-        <span className={cn("text-base", classes?.heading)}>{heading}</span>
-        <span className={cn("text-xs", classes?.subtitle)}>
-          {subtitle && subtitle}
-        </span>
-      </div>
-      <i
-        className={cn(
-          "ri-arrow-down-s-line",
-          "transition-transform group-data-[state=open]:rotate-180",
-        )}
-      ></i>
-    </AccordionTrigger>
-  );
-};
-
-const Content = ({ children, className, ...props }: AccordionContentProps) => {
-  return (
-    <AccordionContent
-      className={cn(
-        "text-balance px-4 pb-4 text-justify text-sm transition-[height]",
-        "data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown",
-        className,
-      )}
-      {...props}
-    >
-      {children}
-    </AccordionContent>
+    <AccordionHeader>
+      <AccordionTrigger
+        className={className}
+        {...props}
+      >
+        <div className="flex flex-col gap-1">
+          <span className={classes?.heading}>{heading}</span>
+          <span className={classes?.subtitle}>
+            {subtitle && subtitle}
+          </span>
+        </div>
+        <i
+          className={cn(
+            "ri-arrow-down-s-line",
+            "transition-transform group-data-[state=open]:rotate-180",
+          )}
+        ></i>
+      </AccordionTrigger>
+    </AccordionHeader>
   );
 };
 
