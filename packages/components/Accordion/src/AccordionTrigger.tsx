@@ -5,6 +5,7 @@ import {
 } from "@radix-ui/react-accordion";
 import { useContext, FC, ReactNode } from "react";
 import { AccordionContext } from "./hooks/AccordionContext";
+import 'remixicon/fonts/remixicon.css';
 
 interface AccordionTriggerProps {
   title: string | ReactNode;
