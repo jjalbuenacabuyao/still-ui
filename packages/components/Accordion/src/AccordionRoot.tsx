@@ -5,20 +5,26 @@ import {
 } from "@radix-ui/react-accordion";
 import { FC } from "react";
 import { AccordionContext } from "./hooks/AccordionContext";
+import { tv } from "tailwind-variants";
 
 interface AccordionRootProps {
   variant?: "default";
   bordered?: boolean;
 }
 
+const root = tv({
+  variants: {
+    bordered: {
+      true: "border p-3",
+    },
+  },
+});
+
 const AccordionRoot: FC<
   AccordionRootProps & (AccordionMultipleProps | AccordionSingleProps)
 > = ({ children, className, variant, bordered, ...props }) => {
   return (
-    <Root
-      className={className}
-      {...props}
-    >
+    <Root className={root({ bordered: bordered, class: className })} {...props}>
       <AccordionContext.Provider value={{ variant, bordered }}>
         {children}
       </AccordionContext.Provider>
