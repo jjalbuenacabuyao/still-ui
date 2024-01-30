@@ -1,0 +1,71 @@
+import type { Meta, StoryObj } from "@storybook/react";
+
+import AccordionRoot, { AccordionRootProps } from "../AccordionRoot";
+import {
+  AccordionMultipleProps,
+  AccordionSingleProps,
+} from "@radix-ui/react-accordion";
+import AccordionItem from "../AccordionItem";
+import AccordionTrigger from "../AccordionTrigger";
+import AccordionContent from "../AccordionContent";
+
+const meta = {
+  title: "Accordion/AccordionRoot",
+  component: AccordionRoot,
+  tags: ["autodocs"],
+} satisfies Meta<typeof AccordionRoot>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+const DefaultStyleTemplate = (
+  args: AccordionRootProps & (AccordionMultipleProps | AccordionSingleProps)
+) => (
+  <div className="">
+    <AccordionRoot {...args}>
+    <AccordionItem value="item-1">
+      <AccordionTrigger
+        title={"Lorem ipsum dolor sit amet, consectetur adipiscing elit?"}
+      />
+      <AccordionContent>
+        Nulla ornare, nulla at commodo condimentum, nibh elit cursus enim, a
+        imperdiet dolor urna ut felis. Curabitur finibus efficitur dolor, eu
+        blandit odio fermentum imperdiet. Cras tincidunt ut libero nec
+        fringilla. Aenean consequat egestas efficitur. Pellentesque ultricies
+        cursus velit, eu sodales sapien semper quis.
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="item-2">
+      <AccordionTrigger title={"Pellentesque vel sapien nisl?"} />
+      <AccordionContent>
+        Fusce finibus justo ut dui auctor fermentum. Nulla facilisi. Curabitur
+        quis enim vel felis accumsan faucibus. Maecenas mattis lacus sit amet
+        risus porttitor tristique. Duis mollis fringilla nunc, at vulputate odio
+        faucibus eget. Sed tortor metus, eleifend id tellus id, interdum gravida
+        purus. Integer at vehicula diam.
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="item-3">
+      <AccordionTrigger
+        title={"Donec consectetur dolor at leo ultricies ultrices?"}
+      />
+      <AccordionContent>
+        Orci varius natoque penatibus et magnis dis parturient montes, nascetur
+        ridiculus mus. Mauris porta enim et eros vulputate, at dapibus leo
+        semper. Sed et justo pretium, porttitor urna eget, dictum est. Nulla
+        quis feugiat nisl. Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit.
+      </AccordionContent>
+    </AccordionItem>
+  </AccordionRoot>
+  </div>
+  
+);
+
+export const Default = {
+  render: DefaultStyleTemplate,
+  args: {
+    type: "multiple",
+    collapsible: true
+  },
+};
