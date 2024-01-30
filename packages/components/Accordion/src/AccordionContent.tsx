@@ -7,7 +7,7 @@ import { AccordionContext } from "./hooks/AccordionContext";
 import { tv } from "tailwind-variants";
 
 const content = tv({
-  base: "text-balance px-4 pb-4 text-justify text-sm transition-[height] data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown",
+  base: "px-4 pb-4 text-justify text-sm transition-[height] data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown",
 });
 
 const AccordionContent: FC<RadixAccordionContentProps> = ({
