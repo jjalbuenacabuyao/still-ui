@@ -7,7 +7,7 @@ import { AccordionContext } from "./hooks/AccordionContext";
 import { tv } from "tailwind-variants";
 
 const item = tv({
-  base: "border-b border-b-slate-300 last:border-0",
+  base: "border-b border-b-slate-200 last:border-0",
 });
 
 const AccordionItem: FC<AccordionItemProps> = ({
