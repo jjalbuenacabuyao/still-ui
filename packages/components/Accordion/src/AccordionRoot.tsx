@@ -15,7 +15,7 @@ export type AccordionRootProps = {
 const root = tv({
   variants: {
     bordered: {
-      true: "border p-3",
+      true: "border border-slate-200 p-3 rounded shadow-md shadow-slate-100",
     },
   },
 });
