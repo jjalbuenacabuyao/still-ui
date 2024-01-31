@@ -1,16 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import AccordionRoot, { AccordionRootProps } from "../AccordionRoot";
-import {
-  AccordionMultipleProps,
-  AccordionSingleProps,
-} from "@radix-ui/react-accordion";
 import AccordionItem from "../AccordionItem";
 import AccordionTrigger from "../AccordionTrigger";
 import AccordionContent from "../AccordionContent";
 
 const meta = {
-  title: "Accordion/AccordionRoot",
+  title: "Accordion",
   component: AccordionRoot,
   tags: ["autodocs"],
 } satisfies Meta<typeof AccordionRoot>;
@@ -18,11 +14,8 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const DefaultStyleTemplate = (
-  args: AccordionRootProps & (AccordionMultipleProps | AccordionSingleProps)
-) => (
-  <div className="">
-    <AccordionRoot {...args}>
+const DefaultStyleTemplate = (args: AccordionRootProps) => (
+  <AccordionRoot {...args}>
     <AccordionItem value="item-1">
       <AccordionTrigger
         title={"Lorem ipsum dolor sit amet, consectetur adipiscing elit?"}
@@ -58,14 +51,28 @@ const DefaultStyleTemplate = (
       </AccordionContent>
     </AccordionItem>
   </AccordionRoot>
-  </div>
-  
 );
 
-export const Default = {
+export const Default: Story = {
+  render: DefaultStyleTemplate,
+  args: {
+    type: "single",
+    collapsible: true,
+  },
+};
+
+export const Multiple: Story = {
   render: DefaultStyleTemplate,
   args: {
     type: "multiple",
-    collapsible: true
+  },
+};
+
+export const Bordered: Story = {
+  render: DefaultStyleTemplate,
+  args: {
+    type: "single",
+    collapsible: true,
+    bordered: true,
   },
 };
