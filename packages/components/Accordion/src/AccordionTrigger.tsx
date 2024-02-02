@@ -8,7 +8,7 @@ import { AccordionContext } from "./hooks/AccordionContext";
 import "remixicon/fonts/remixicon.css";
 import { tv } from "tailwind-variants";
 
-interface AccordionTriggerProps {
+type AccordionTriggerProps = {
   title: string | ReactNode;
   subtitle?: string | ReactNode;
   icon?: ReactNode;
