@@ -5,9 +5,11 @@ import {
 import { FC, useContext } from "react";
 import { AccordionContext } from "./hooks/AccordionContext";
 import { tv } from "tailwind-variants";
+//@ts-ignore
+import style from "./styles/index.module.css";
 
 const content = tv({
-  base: "px-4 pb-4 text-justify text-sm transition-[height] data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown",
+  base: "px-4 pb-4 text-justify text-sm",
 });
 
 const AccordionContent: FC<RadixAccordionContentProps> = ({
@@ -18,7 +20,7 @@ const AccordionContent: FC<RadixAccordionContentProps> = ({
   const options = useContext(AccordionContext);
 
   return (
-    <RadixAccordionContent className={content({ class: className })} {...props}>
+    <RadixAccordionContent className={`${style.accordionContent} ` + content({ class: className })} {...props}>
       {children}
     </RadixAccordionContent>
   );
