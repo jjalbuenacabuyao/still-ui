@@ -1,7 +1,7 @@
 import { createContext } from "react";
 
 type AccordionOptions = {
-  variant?: "default";
+  variant?: "splitted";
   bordered?: boolean;
 };
 
