@@ -132,5 +132,14 @@ export const WithSubtitle: Story = {
   args: {
     type: "single",
     collapsible: true,
-  }
-}
+  },
+};
+
+export const Splitted: Story = {
+  render: AccordionWithSubtitleTemplate,
+  args: {
+    type: "single",
+    collapsible: true,
+    variant: "splitted",
+  },
+};
