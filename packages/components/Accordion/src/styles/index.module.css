@@ -20,12 +20,6 @@
   }
 }
 
-.accordionContent {
-  transition-property: height;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .accordionContent[data-state=closed] {
   animation: slideUp 150ms cubic-bezier(0.87, 0, 0.13, 1);
 }
