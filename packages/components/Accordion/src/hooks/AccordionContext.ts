@@ -1,8 +1,4 @@
 import { createContext } from "react";
-
-type AccordionOptions = {
-  variant?: "splitted";
-  bordered?: boolean;
-};
+import { AccordionOptions } from "../types";
 
 export const AccordionContext = createContext<AccordionOptions>({});

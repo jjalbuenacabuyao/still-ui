@@ -6,11 +6,9 @@ import {
 import { FC } from "react";
 import { AccordionContext } from "./hooks/AccordionContext";
 import { tv } from "tailwind-variants";
+import { AccordionOptions } from "./types";
 
-export type AccordionRootProps = {
-  variant?: "splitted";
-  bordered?: boolean;
-} & (AccordionMultipleProps | AccordionSingleProps);
+export type AccordionRootProps = AccordionOptions & (AccordionMultipleProps | AccordionSingleProps);
 
 const root = tv({
   variants: {
