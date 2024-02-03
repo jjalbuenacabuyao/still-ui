@@ -149,6 +149,15 @@ export const NeoBrutalism: Story = {
   args: {
     type: "single",
     collapsible: true,
+    ui: "brutal",
+  },
+};
+
+export const SplittedNeoBrutalism: Story = {
+  render: AccordionWithSubtitleTemplate,
+  args: {
+    type: "single",
+    collapsible: true,
     splitted: true,
     ui: "brutal",
   },

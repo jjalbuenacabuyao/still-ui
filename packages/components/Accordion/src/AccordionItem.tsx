@@ -13,12 +13,25 @@ const item = tv({
       true: "rounded border border-slate-200 p-2 shadow-md shadow-slate-100 last:border",
     },
     ui: {
-      brutal:
-        "rounded-2xl border-0 bg-white shadow-none outline outline-2 outline-black drop-shadow-[4px_6px_#000] last:border-0",
+      brutal: "",
       glassmorphic: "",
       neomorphic: "",
     },
   },
+  compoundVariants: [
+    {
+      splitted: true,
+      ui: "brutal",
+      class:
+        "rounded-2xl border-0 bg-white shadow-none outline outline-2 outline-black drop-shadow-[4px_6px_#000] last:border-0",
+    },
+    {
+      splitted: undefined,
+      ui: "brutal",
+      class:
+        "border-black",
+    },
+  ],
 });
 
 const AccordionItem: FC<AccordionItemProps> = ({

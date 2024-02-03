@@ -20,11 +20,24 @@ const root = tv({
       true: "rounded border border-slate-200 p-3 shadow-md shadow-slate-100",
     },
     ui: {
-      brutal: "gap-6",
+      brutal: "",
       glassmorphic: "",
       neomorphic: "",
     },
   },
+  compoundVariants: [
+    {
+      splitted: undefined,
+      ui: "brutal",
+      class:
+        "rounded-lg bg-white outline outline-2 outline-black drop-shadow-[4px_6px_#000]",
+    },
+    {
+      splitted: true,
+      ui: "brutal",
+      class: "gap-6 rounded-lg bg-white",
+    },
+  ],
 });
 
 const AccordionRoot: FC<AccordionRootProps> = ({
