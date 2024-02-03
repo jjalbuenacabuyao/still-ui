@@ -1,4 +1,4 @@
 export type AccordionOptions = {
-  variant?: "splitted";
+  splitted?: boolean;
   bordered?: boolean;
 };

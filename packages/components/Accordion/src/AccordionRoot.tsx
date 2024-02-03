@@ -8,12 +8,13 @@ import { AccordionContext } from "./hooks/AccordionContext";
 import { tv } from "tailwind-variants";
 import { AccordionOptions } from "./types";
 
-export type AccordionRootProps = AccordionOptions & (AccordionMultipleProps | AccordionSingleProps);
+export type AccordionRootProps = AccordionOptions &
+  (AccordionMultipleProps | AccordionSingleProps);
 
 const root = tv({
   variants: {
-    variant: {
-      splitted: "border-0 p-0 shadow-none flex flex-col gap-4",
+    splitted: {
+      true: "flex flex-col gap-4 border-0 p-0 shadow-none",
     },
     bordered: {
       true: "rounded border border-slate-200 p-3 shadow-md shadow-slate-100",
@@ -24,13 +25,20 @@ const root = tv({
 const AccordionRoot: FC<AccordionRootProps> = ({
   children,
   className,
-  variant,
+  splitted,
   bordered,
   ...props
 }) => {
   return (
-    <Root className={root({ variant: variant, bordered: bordered, class: className })} {...props}>
-      <AccordionContext.Provider value={{ variant, bordered }}>
+    <Root
+      className={root({
+        splitted,
+        bordered: bordered,
+        class: className,
+      })}
+      {...props}
+    >
+      <AccordionContext.Provider value={{ splitted, bordered }}>
         {children}
       </AccordionContext.Provider>
     </Root>
