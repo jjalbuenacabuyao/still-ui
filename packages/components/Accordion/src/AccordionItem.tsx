@@ -12,6 +12,12 @@ const item = tv({
     splitted: {
       true: "rounded border border-slate-200 p-2 shadow-md shadow-slate-100 last:border",
     },
+    ui: {
+      brutal:
+        "rounded-2xl border-0 bg-white shadow-none outline outline-2 outline-black drop-shadow-[4px_6px_#000] last:border-0",
+      glassmorphic: "",
+      neomorphic: "",
+    },
   },
 });
 
@@ -22,11 +28,11 @@ const AccordionItem: FC<AccordionItemProps> = ({
   ...props
 }) => {
   const options = useContext(AccordionContext);
-  const { splitted } = options;
+  const { splitted, ui } = options;
 
   return (
     <Item
-      className={item({ splitted, class: className })}
+      className={item({ splitted, ui: ui, class: className })}
       value={value}
       {...props}
     >

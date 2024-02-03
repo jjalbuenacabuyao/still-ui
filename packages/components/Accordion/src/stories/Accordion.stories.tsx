@@ -140,6 +140,16 @@ export const Splitted: Story = {
   args: {
     type: "single",
     collapsible: true,
-    variant: "splitted",
+    splitted: true,
+  },
+};
+
+export const NeoBrutalism: Story = {
+  render: AccordionWithSubtitleTemplate,
+  args: {
+    type: "single",
+    collapsible: true,
+    splitted: true,
+    ui: "brutal",
   },
 };

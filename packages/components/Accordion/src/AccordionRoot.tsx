@@ -19,6 +19,11 @@ const root = tv({
     bordered: {
       true: "rounded border border-slate-200 p-3 shadow-md shadow-slate-100",
     },
+    ui: {
+      brutal: "gap-6",
+      glassmorphic: "",
+      neomorphic: "",
+    },
   },
 });
 
@@ -27,6 +32,7 @@ const AccordionRoot: FC<AccordionRootProps> = ({
   className,
   splitted,
   bordered,
+  ui,
   ...props
 }) => {
   return (
@@ -34,11 +40,12 @@ const AccordionRoot: FC<AccordionRootProps> = ({
       className={root({
         splitted,
         bordered: bordered,
+        ui: ui,
         class: className,
       })}
       {...props}
     >
-      <AccordionContext.Provider value={{ splitted, bordered }}>
+      <AccordionContext.Provider value={{ splitted, bordered, ui }}>
         {children}
       </AccordionContext.Provider>
     </Root>
