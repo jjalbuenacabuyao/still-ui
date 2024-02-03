@@ -20,7 +20,7 @@ const root = tv({
       true: "rounded border border-slate-200 p-3 shadow-md shadow-slate-100",
     },
     ui: {
-      brutal: "",
+      brutal: "rounded-lg",
       glassmorphic: "",
       neomorphic: "",
     },
@@ -29,13 +29,12 @@ const root = tv({
     {
       splitted: undefined,
       ui: "brutal",
-      class:
-        "rounded-lg bg-white outline outline-2 outline-black drop-shadow-[4px_6px_#000]",
+      class: "outline outline-2 outline-black drop-shadow-[4px_6px_#000] bg-white",
     },
     {
       splitted: true,
       ui: "brutal",
-      class: "gap-6 rounded-lg bg-white",
+      class: "gap-6",
     },
   ],
 });
