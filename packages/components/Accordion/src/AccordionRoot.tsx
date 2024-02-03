@@ -29,12 +29,25 @@ const root = tv({
     {
       splitted: undefined,
       ui: "brutal",
-      class: "outline outline-2 outline-black drop-shadow-[4px_6px_#000] bg-white",
+      class:
+        "bg-white outline outline-2 outline-black drop-shadow-[4px_6px_#000]",
     },
     {
       splitted: true,
       ui: "brutal",
       class: "gap-6",
+    },
+    {
+      splitted: undefined,
+      bordered: true,
+      ui: "brutal",
+      class: "rounded-lg shadow-none",
+    },
+    {
+      splitted: true,
+      bordered: true,
+      ui: "brutal",
+      class: "rounded-2xl p-5",
     },
   ],
 });
