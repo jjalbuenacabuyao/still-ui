@@ -1,41 +1,31 @@
 {
-  "name": "placid-ui",
-  "version": "1.0.0",
-  "description": "",
-  "main": "packages/index.ts",
-  "files": [
-    "packages/**/*"
-  ],
+  "name": "still-ui",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "concurrently npm:watch*",
-    "watch:storybook": "storybook dev -p 6006",
-    "watch:tailwind": "npx tailwindcss -i ./packages/styles/input.css -o ./packages/styles/output.css --minify --watch",
-    "build-storybook": "storybook build"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
-  "author": "jjalbuenacabuyao",
-  "license": "ISC",
   "dependencies": {
-    "@radix-ui/react-accordion": "^1.1.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "remixicon": "^4.1.0"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.6.10",
-    "@storybook/addon-interactions": "^7.6.10",
-    "@storybook/addon-links": "^7.6.10",
-    "@storybook/addon-onboarding": "^1.0.10",
-    "@storybook/blocks": "^7.6.10",
-    "@storybook/react": "^7.6.10",
-    "@storybook/react-vite": "^7.6.10",
-    "@storybook/test": "^7.6.10",
-    "@types/react": "^18.2.48",
-    "@types/react-dom": "^18.2.18",
-    "concurrently": "^8.2.2",
-    "prettier": "^3.2.4",
-    "typescript": "^5.3.3",
-    "storybook": "^7.6.10",
-    "tailwindcss": "^3.4.1"
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
   }
 }
