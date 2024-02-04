@@ -31,6 +31,7 @@ const { wrapper, innerWrapper, tvTitle, tvSubtitle, tvIcon } = trigger();
 const AccordionTrigger: FC<
   RadixAccordionTriggerProps & AccordionTriggerProps
 > = ({ className, title, subtitle, icon, ...props }) => {
+  // @ts-ignore
   const options = useContext(AccordionContext);
 
   return (

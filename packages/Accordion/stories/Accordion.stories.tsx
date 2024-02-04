@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import AccordionRoot, { AccordionRootProps } from "../AccordionRoot";
-import AccordionItem from "../AccordionItem";
-import AccordionTrigger from "../AccordionTrigger";
-import AccordionContent from "../AccordionContent";
+import AccordionRoot, { AccordionRootProps } from "../src/AccordionRoot";
+import AccordionItem from "../src/AccordionItem";
+import AccordionTrigger from "../src/AccordionTrigger";
+import AccordionContent from "../src/AccordionContent";
+import React from "react";
 
 const meta = {
   title: "Accordion",

@@ -1,2 +1,2 @@
 # Still UI
-Reusable UI components built on top of Radix Primitive and TailwindCSS
+Reusable UI Library using Radix UI Primitives and TailwindCSS. 
