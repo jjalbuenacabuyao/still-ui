@@ -4,7 +4,6 @@ import AccordionRoot, { AccordionRootProps } from "../src/AccordionRoot";
 import AccordionItem from "../src/AccordionItem";
 import AccordionTrigger from "../src/AccordionTrigger";
 import AccordionContent from "../src/AccordionContent";
-import React from "react";
 
 const meta = {
   title: "Accordion",
@@ -161,5 +160,14 @@ export const SplittedNeoBrutalism: Story = {
     collapsible: true,
     splitted: true,
     ui: "brutal",
+  },
+};
+
+export const Glassmorphism: Story = {
+  render: AccordionWithSubtitleTemplate,
+  args: {
+    type: "single",
+    collapsible: true,
+    ui: "glassmorphic",
   },
 };

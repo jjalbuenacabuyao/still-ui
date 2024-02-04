@@ -49,6 +49,12 @@ const root = tv({
       ui: "brutal",
       class: "rounded-2xl p-5",
     },
+    {
+      splitted: undefined,
+      ui: "glassmorphic",
+      class:
+        "shadow-[0_4px_30px_rgba(0,0,0,0.1)] z-10 rounded-md border-white border before:block before:w-20 before:h-20 before:absolute before:-right-4 before:-top-4 before:bg-slate-900 before:-z-10 before:rounded-full",
+    },
   ],
 });
 

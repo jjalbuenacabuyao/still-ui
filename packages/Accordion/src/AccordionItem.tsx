@@ -28,8 +28,11 @@ const item = tv({
     {
       splitted: undefined,
       ui: "brutal",
-      class:
-        "border-black",
+      class: "border-black",
+    },
+    {
+      ui: "glassmorphic",
+      class: "backdrop-blur bg-white/60",
     },
   ],
 });
