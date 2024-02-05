@@ -32,6 +32,9 @@ const trigger = tv({
       },
       neomorphic: "",
     },
+    splitted: {
+      true: { wrapper: "p-6" },
+    },
   },
 });
 
@@ -41,12 +44,12 @@ const AccordionTrigger: FC<
   RadixAccordionTriggerProps & AccordionTriggerProps
 > = ({ className, title, subtitle, icon, ...props }) => {
   // @ts-ignore
-  const options = useContext(AccordionContext);
+  const { splitted, ui, ...rest } = useContext(AccordionContext);
 
   return (
     <AccordionHeader>
       <Trigger
-        className={wrapper({ class: className, ui: options.ui })}
+        className={wrapper({ class: className, ui, splitted })}
         {...props}
       >
         <div className={innerWrapper()}>
