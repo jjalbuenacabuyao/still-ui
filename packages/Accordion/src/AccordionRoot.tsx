@@ -53,7 +53,7 @@ const root = tv({
       splitted: undefined,
       ui: "glassmorphic",
       class:
-        "z-10 rounded-md border border-white shadow-[0_4px_30px_rgba(0,0,0,0.1)] before:absolute before:-right-4 before:-top-4 before:-z-10 before:block before:h-36 before:w-36 before:rounded-full before:bg-sky-500",
+        "z-10 rounded-md border border-white shadow-[0_4px_30px_rgba(0,0,0,0.1)] before:absolute before:-right-4 before:-top-4 before:-z-10 before:block before:h-36 before:w-36 before:rounded-full before:bg-sky-500 after:absolute after:-bottom-4 after:-left-4 after:-z-10 after:block after:h-36 after:w-36 after:rounded-full after:bg-sky-800",
     },
   ],
 });
