@@ -10,6 +10,13 @@ import style from "./styles/index.module.css";
 
 const content = tv({
   base: "px-4 pb-4 text-justify text-sm",
+  variants: {
+    ui: {
+      brutal: "",
+      glassmorphic: "bg-white/50 backdrop-blur-md",
+      neomorphic: "",
+    },
+  },
 });
 
 const AccordionContent: FC<RadixAccordionContentProps> = ({
@@ -21,7 +28,10 @@ const AccordionContent: FC<RadixAccordionContentProps> = ({
   const options = useContext(AccordionContext);
 
   return (
-    <RadixAccordionContent className={`${style.accordionContent} ` + content({ class: className })} {...props}>
+    <RadixAccordionContent
+      className={`${style.accordionContent} ` + content({ class: className, ui: options.ui })}
+      {...props}
+    >
       {children}
     </RadixAccordionContent>
   );
