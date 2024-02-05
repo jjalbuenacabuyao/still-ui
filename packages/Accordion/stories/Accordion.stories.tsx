@@ -172,3 +172,13 @@ export const Glassmorphism: Story = {
     ui: "glassmorphic",
   },
 };
+
+export const SplittedGlassmorphism: Story = {
+  render: AccordionWithSubtitleTemplate,
+  args: {
+    type: "single",
+    collapsible: true,
+    splitted: true,
+    ui: "glassmorphic",
+  },
+};
