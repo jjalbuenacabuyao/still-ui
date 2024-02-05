@@ -32,7 +32,7 @@ const item = tv({
     },
     {
       ui: "glassmorphic",
-      class: "backdrop-blur bg-white/60",
+      class: "bg-white/50 backdrop-blur-md",
     },
   ],
 });

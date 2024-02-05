@@ -12,17 +12,26 @@ type AccordionTriggerProps = {
   title: string | ReactNode;
   subtitle?: string | ReactNode;
   icon?: ReactNode;
-}
+};
 
 const trigger = tv({
   slots: {
     wrapper:
-      "group flex w-full items-center justify-between gap-4 p-4 text-left ",
+      "group flex w-full items-center justify-between gap-4 p-4 text-left",
     innerWrapper: "flex flex-col gap-1",
     tvTitle: "text-base",
     tvSubtitle: "text-xs",
     tvIcon:
       "ri-arrow-down-s-line transition-transform group-data-[state=open]:rotate-180",
+  },
+  variants: {
+    ui: {
+      brutal: "",
+      glassmorphic: {
+        wrapper: "bg-white/50 backdrop-blur-md",
+      },
+      neomorphic: "",
+    },
   },
 });
 
@@ -36,7 +45,10 @@ const AccordionTrigger: FC<
 
   return (
     <AccordionHeader>
-      <Trigger className={wrapper({ class: className })} {...props}>
+      <Trigger
+        className={wrapper({ class: className, ui: options.ui })}
+        {...props}
+      >
         <div className={innerWrapper()}>
           <span className={tvTitle()}>{title}</span>
           <span className={tvSubtitle()}>{subtitle}</span>
