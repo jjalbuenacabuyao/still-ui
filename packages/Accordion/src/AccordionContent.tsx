@@ -24,7 +24,6 @@ const AccordionContent: FC<RadixAccordionContentProps> = ({
   children,
   ...props
 }) => {
-  //@ts-ignore
   const options = useContext(AccordionContext);
 
   return (
