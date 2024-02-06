@@ -182,3 +182,12 @@ export const SplittedGlassmorphism: Story = {
     ui: "glassmorphic",
   },
 };
+
+export const Neomorphism: Story = {
+  render: AccordionWithSubtitleTemplate,
+  args: {
+    type: "single",
+    collapsible: true,
+    ui: "neomorphic",
+  },
+};
