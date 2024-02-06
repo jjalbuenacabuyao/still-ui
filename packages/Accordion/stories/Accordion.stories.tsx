@@ -183,10 +183,20 @@ export const SplittedGlassmorphism: Story = {
   },
 };
 
-export const Neomorphism: Story = {
+export const Neumorphism: Story = {
   render: AccordionWithSubtitleTemplate,
   args: {
     type: "single",
+    collapsible: true,
+    ui: "neumorphic",
+  },
+};
+
+export const SplittedNeumorphism: Story = {
+  render: AccordionWithSubtitleTemplate,
+  args: {
+    type: "single",
+    splitted: true,
     collapsible: true,
     ui: "neumorphic",
   },
