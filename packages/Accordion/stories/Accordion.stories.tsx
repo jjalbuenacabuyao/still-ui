@@ -4,6 +4,7 @@ import AccordionRoot, { AccordionRootProps } from "../src/AccordionRoot";
 import AccordionItem from "../src/AccordionItem";
 import AccordionTrigger from "../src/AccordionTrigger";
 import AccordionContent from "../src/AccordionContent";
+//@ts-ignore
 import React from "react";
 
 const meta = {
