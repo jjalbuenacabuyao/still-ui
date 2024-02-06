@@ -23,7 +23,7 @@ const root = tv({
       brutal: "rounded-lg",
       glassmorphic:
         "before:absolute before:-right-4 before:-top-4 before:-z-10 before:block before:h-36 before:w-36 before:rounded-full before:bg-sky-500 after:absolute after:-bottom-4 after:-left-4 after:-z-10 after:block after:h-36 after:w-36 after:rounded-full after:bg-sky-800",
-      neomorphic:
+      neumorphic:
         "rounded-md bg-slate-100 shadow-[-20px_20px_41px_#9ca3af,20px_-20px_41px_#ffffff]",
     },
   },
@@ -64,7 +64,7 @@ const root = tv({
     },
     {
       splitted: true,
-      ui: "neomorphic",
+      ui: "neumorphic",
       class:
         "bg-initial shadow-none",
     },

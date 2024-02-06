@@ -188,6 +188,6 @@ export const Neomorphism: Story = {
   args: {
     type: "single",
     collapsible: true,
-    ui: "neomorphic",
+    ui: "neumorphic",
   },
 };

@@ -15,7 +15,7 @@ const item = tv({
     ui: {
       brutal: "",
       glassmorphic: "",
-      neomorphic: "",
+      neumorphic: "",
     },
   },
   compoundVariants: [
@@ -46,7 +46,7 @@ const item = tv({
     },
     {
       splitted: true,
-      ui: "neomorphic",
+      ui: "neumorphic",
       class: "shadow-[-5px_5px_20px_#9ca3af,5px_-5px_20px_#ffffff] border-0",
     },
   ],

@@ -30,7 +30,7 @@ const trigger = tv({
       glassmorphic: {
         wrapper: "bg-white/50 backdrop-blur-md",
       },
-      neomorphic: "",
+      neumorphic: "",
     },
     splitted: {
       true: { wrapper: "p-6" },

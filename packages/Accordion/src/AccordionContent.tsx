@@ -14,7 +14,7 @@ const content = tv({
     ui: {
       brutal: "",
       glassmorphic: "bg-white/50 backdrop-blur-md",
-      neomorphic: "",
+      neumorphic: "",
     },
   },
 });
