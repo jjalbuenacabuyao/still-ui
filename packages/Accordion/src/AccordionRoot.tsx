@@ -56,6 +56,11 @@ const root = tv({
       class:
         "rounded-md border border-white shadow-[0_4px_30px_rgba(0,0,0,0.1)]",
     },
+    {
+      bordered: true,
+      ui: "glassmorphic",
+      class: "p-0 shadow-none rounded-md border-white",
+    },
   ],
 });
 
