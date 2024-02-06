@@ -17,13 +17,14 @@ const root = tv({
       true: "flex flex-col gap-4 border-0 p-0 shadow-none",
     },
     bordered: {
-      true: "rounded border border-slate-200 p-3 shadow-md shadow-slate-100",
+      true: "rounded-md border border-slate-200 p-3 shadow-md shadow-slate-100",
     },
     ui: {
       brutal: "rounded-lg",
       glassmorphic:
         "before:absolute before:-right-4 before:-top-4 before:-z-10 before:block before:h-36 before:w-36 before:rounded-full before:bg-sky-500 after:absolute after:-bottom-4 after:-left-4 after:-z-10 after:block after:h-36 after:w-36 after:rounded-full after:bg-sky-800",
-      neomorphic: "",
+      neomorphic:
+        "rounded-md bg-slate-100 shadow-[-20px_20px_41px_#9ca3af,20px_-20px_41px_#ffffff]",
     },
   },
   compoundVariants: [
@@ -59,7 +60,13 @@ const root = tv({
     {
       bordered: true,
       ui: "glassmorphic",
-      class: "p-0 shadow-none rounded-md border-white",
+      class: "rounded-md border-white p-0 shadow-none",
+    },
+    {
+      splitted: true,
+      ui: "neomorphic",
+      class:
+        "bg-initial shadow-none",
     },
   ],
 });

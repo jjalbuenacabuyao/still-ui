@@ -10,7 +10,7 @@ const item = tv({
   base: "border-b border-b-slate-200 last:border-0",
   variants: {
     splitted: {
-      true: "rounded border border-slate-200 shadow-md shadow-slate-100 last:border",
+      true: "rounded border border-slate-200 shadow-md last:border",
     },
     ui: {
       brutal: "",
@@ -19,6 +19,11 @@ const item = tv({
     },
   },
   compoundVariants: [
+    {
+      splitted: true,
+      ui: undefined,
+      class: "shadow-slate-100"
+    },
     {
       splitted: true,
       ui: "brutal",
@@ -38,6 +43,11 @@ const item = tv({
       ui: "glassmorphic",
       splitted: true,
       class: "shadow-none",
+    },
+    {
+      splitted: true,
+      ui: "neomorphic",
+      class: "shadow-[-5px_5px_20px_#9ca3af,5px_-5px_20px_#ffffff] border-0",
     },
   ],
 });
