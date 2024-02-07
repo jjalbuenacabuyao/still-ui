@@ -1,7 +1,7 @@
 {
   "name": "@still-ui/accordion",
   "description": "Highly customizable and accessible Accordion component.",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "type": "module",
   "files": [
     "dist"
@@ -13,6 +13,23 @@
   "scripts": {
     "build": "tsup src --dts",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "react",
+    "accordion",
+    "radixui",
+    "tailwindcss",
+    "ui",
+    "component",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jjalbuenacabuyao/still-ui.git",
+    "directory": "packages/Accordion"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
