@@ -1,7 +1,6 @@
 {
   "name": "@still-ui/accordion",
   "description": "Highly customizable and accessible Accordion component.",
-  "private": true,
   "version": "1.0.6",
   "type": "module",
   "files": [
