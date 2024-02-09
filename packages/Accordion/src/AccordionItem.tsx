@@ -7,7 +7,7 @@ import { AccordionContext } from "./hooks/AccordionContext";
 import { tv } from "tailwind-variants";
 
 const item = tv({
-  base: "border-b border-b-slate-200 last:border-0",
+  base: "group border-b border-b-slate-200 last:border-0",
   variants: {
     splitted: {
       true: "rounded border border-slate-200 shadow-md last:border",

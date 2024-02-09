@@ -1,15 +1,12 @@
 import {
   AccordionContentProps as RadixAccordionContentProps,
-  AccordionContent as RadixAccordionContent,
 } from "@radix-ui/react-accordion";
 import { FC, useContext } from "react";
 import { AccordionContext } from "./hooks/AccordionContext";
 import { tv } from "tailwind-variants";
-//@ts-ignore
-import style from "./styles/index.module.css";
 
 const content = tv({
-  base: "px-4 pb-4 text-justify text-sm",
+  base: "grid grid-rows-[0fr] px-4 pb-0 text-justify text-sm transition-[grid-template-rows] ease-[cubic-bezier(0.87,0,0.13,1)] group-data-[state=open]:grid-rows-[1fr] group-data-[state=open]:pb-4",
   variants: {
     ui: {
       brutal: "",
@@ -27,12 +24,9 @@ const AccordionContent: FC<RadixAccordionContentProps> = ({
   const options = useContext(AccordionContext);
 
   return (
-    <RadixAccordionContent
-      className={`${style.accordionContent} ` + content({ class: className, ui: options.ui })}
-      {...props}
-    >
-      {children}
-    </RadixAccordionContent>
+    <div className={content({ class: className, ui: options.ui })} {...props}>
+        <p className="overflow-hidden">{children}</p>
+    </div>
   );
 };
 
