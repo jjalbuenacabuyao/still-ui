@@ -1,7 +1,7 @@
 {
   "name": "@still-ui/accordion",
   "description": "Highly customizable and accessible Accordion component.",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "type": "module",
   "files": [
     "dist"
@@ -29,7 +29,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/jjalbuenacabuyao/still-ui.git",
-    "directory": "packages/Accordion"
+    "directory": "packages/accordion"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
