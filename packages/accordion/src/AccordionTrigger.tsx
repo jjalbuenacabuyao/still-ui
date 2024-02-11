@@ -5,8 +5,8 @@ import {
 } from "@radix-ui/react-accordion";
 import { useContext, FC, ReactNode } from "react";
 import { AccordionContext } from "./hooks/AccordionContext";
-import "remixicon/fonts/remixicon.css";
 import { tv } from "tailwind-variants";
+import {ChevronDownIcon} from "@radix-ui/react-icons"
 
 type AccordionTriggerProps = {
   title: string | ReactNode;
@@ -22,7 +22,7 @@ const trigger = tv({
     tvTitle: "text-base",
     tvSubtitle: "text-xs",
     tvIcon:
-      "ri-arrow-down-s-line transition-transform group-data-[state=open]:rotate-180",
+      "transition-transform group-data-[state=open]:rotate-180",
   },
   variants: {
     ui: {
@@ -55,7 +55,7 @@ const AccordionTrigger: FC<
           <span className={tvTitle()}>{title}</span>
           <span className={tvSubtitle()}>{subtitle}</span>
         </div>
-        {icon ? icon : <i className={tvIcon()}></i>}
+        {icon ? icon : <ChevronDownIcon className={tvIcon()} />}
       </Trigger>
     </AccordionHeader>
   );
