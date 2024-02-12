@@ -1,27 +1,26 @@
 import { ButtonHTMLAttributes, FC, ReactNode } from "react";
 import { tv } from "tailwind-variants";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  title?: string;
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: ReactNode;
   isLoading?: boolean;
 }
 
 const button = tv({
-  base: "px-6 py-4 font-bold flex items-center bg-sky-600 text-white rounded",
-})
+  base: "flex items-center rounded bg-sky-600 px-5 py-3 font-bold text-white",
+});
 
 const Button: FC<ButtonProps> = ({
+  children,
   className,
   disabled,
   icon,
   isLoading,
-  title,
   ...props
 }) => {
   return (
     <button className={button()} {...props}>
-      {title}
+      {children}
       {icon}
     </button>
   );
