@@ -7,7 +7,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const button = tv({
-  base: "flex items-center rounded bg-sky-600 px-5 py-3 font-bold text-white",
+  base: "rounded bg-sky-600 px-5 py-3 font-bold text-white",
 });
 
 const Button: FC<ButtonProps> = ({
