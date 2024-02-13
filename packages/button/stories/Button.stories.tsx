@@ -11,8 +11,36 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const ButtonComponent = (args: ButtonProps) => <Button>Default</Button>;
+const ButtonComponent = (args: ButtonProps) => <Button {...args}>Default</Button>;
 
 export const DefaultButton: Story = {
   render: ButtonComponent,
+};
+
+export const Success: Story = {
+  render: ButtonComponent,
+  args: {
+    variant: "success"
+  }
+};
+
+export const Danger: Story = {
+  render: ButtonComponent,
+  args: {
+    variant: "danger",
+  },
+};
+
+export const Outline: Story = {
+  render: ButtonComponent,
+  args: {
+    variant: "outline",
+  },
+};
+
+export const DangerButton: Story = {
+  render: ButtonComponent,
+  args: {
+    variant: "ghost",
+  },
 };
