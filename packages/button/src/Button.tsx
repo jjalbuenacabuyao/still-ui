@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes, FC, ReactNode } from "react";
 import { tv } from "tailwind-variants";
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: ReactNode;
   isLoading?: boolean;
   variant?: "success" | "danger" | "outline" | "ghost";
