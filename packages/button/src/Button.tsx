@@ -5,21 +5,29 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: ReactNode;
   isLoading?: boolean;
   rounded?: boolean;
+  size?: "sm" | "md" | "lg" | "xl";
   variant?: "success" | "danger" | "outline" | "ghost";
 }
 
 const button = tv({
-  base: "rounded bg-sky-600 px-5 py-3 font-bold text-white",
+  base: "rounded bg-sky-600 px-5 py-3 font-bold text-white hover:shadow-lg",
   variants: {
     variant: {
-      success: "bg-green-500",
-      danger: "bg-red-500",
-      outline: "border border-sky-500 bg-transparent text-sky-500",
-      ghost: "bg-sky-200 text-sky-800",
+      success: "bg-green-500 hover:shadow-lg",
+      danger: "bg-red-500 hover:shadow-lg",
+      outline:
+        "border border-sky-500 bg-transparent text-sky-500 hover:shadow-lg",
+      ghost: "bg-sky-100 text-sky-800 hover:shadow-lg",
     },
     rounded: {
       true: "rounded-full",
-    }
+    },
+    size: {
+      sm: "px-4 py-2 text-sm font-medium",
+      md: "",
+      lg: "px-6 py-4 text-lg",
+      xl: "px-7 py-5 text-xl",
+    },
   },
 });
 
@@ -30,11 +38,12 @@ const Button: FC<ButtonProps> = ({
   icon,
   isLoading,
   rounded,
+  size = "md",
   variant,
   ...props
 }) => {
   return (
-    <button className={button({ variant, rounded })} {...props}>
+    <button className={button({ variant, rounded, size })} {...props}>
       {children}
       {icon}
     </button>
