@@ -49,3 +49,31 @@ export const Rounded: Story = {
     rounded: true,
   },
 };
+
+export const Small: Story = {
+  render: (props) => <Button {...props}>Small</Button>,
+  args: {
+    size: "sm"
+  },
+};
+
+export const MediumDefault: Story = {
+  render: (props) => <Button {...props}>Medium</Button>,
+  args: {
+    size: "md",
+  },
+};
+
+export const Large: Story = {
+  render: (props) => <Button {...props}>Large</Button>,
+  args: {
+    size: "lg",
+  },
+};
+
+export const XL: Story = {
+  render: (props) => <Button {...props}>Extra Large</Button>,
+  args: {
+    size: "xl",
+  },
+};
