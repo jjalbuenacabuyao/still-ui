@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import Button, { ButtonProps } from "../src/Button";
+import Button from "../src/Button";
 import React from "react";
 
 const meta = {
@@ -11,35 +11,33 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const ButtonComponent = (args: ButtonProps) => <Button {...args}>Default</Button>;
-
 export const DefaultButton: Story = {
-  render: ButtonComponent,
+  render: (props) => <Button {...props}>Default</Button>,
 };
 
 export const Success: Story = {
-  render: ButtonComponent,
+  render: (props) => <Button {...props}>Success</Button>,
   args: {
-    variant: "success"
-  }
+    variant: "success",
+  },
 };
 
 export const Danger: Story = {
-  render: ButtonComponent,
+  render: (props) => <Button {...props}>Danger</Button>,
   args: {
     variant: "danger",
   },
 };
 
 export const Outline: Story = {
-  render: ButtonComponent,
+  render: (props) => <Button {...props}>Outline</Button>,
   args: {
     variant: "outline",
   },
 };
 
-export const DangerButton: Story = {
-  render: ButtonComponent,
+export const Ghost: Story = {
+  render: (props) => <Button {...props}>Ghost</Button>,
   args: {
     variant: "ghost",
   },
