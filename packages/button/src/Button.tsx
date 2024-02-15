@@ -4,6 +4,7 @@ import { tv } from "tailwind-variants";
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: ReactNode;
   isLoading?: boolean;
+  rounded?: boolean;
   variant?: "success" | "danger" | "outline" | "ghost";
 }
 
@@ -16,6 +17,9 @@ const button = tv({
       outline: "border border-sky-500 bg-transparent text-sky-500",
       ghost: "bg-sky-200 text-sky-800",
     },
+    rounded: {
+      true: "rounded-full",
+    }
   },
 });
 
@@ -25,11 +29,12 @@ const Button: FC<ButtonProps> = ({
   disabled,
   icon,
   isLoading,
+  rounded,
   variant,
   ...props
 }) => {
   return (
-    <button className={button({ variant: variant })} {...props}>
+    <button className={button({ variant, rounded })} {...props}>
       {children}
       {icon}
     </button>
