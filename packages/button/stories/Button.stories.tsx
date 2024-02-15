@@ -42,3 +42,10 @@ export const Ghost: Story = {
     variant: "ghost",
   },
 };
+
+export const Rounded: Story = {
+  render: (props) => <Button {...props}>Rounded</Button>,
+  args: {
+    rounded: true,
+  },
+};
