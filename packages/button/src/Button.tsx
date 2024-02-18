@@ -10,7 +10,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const button = tv({
-  base: "rounded bg-sky-600 px-5 py-3 font-bold text-white hover:shadow-lg",
+  base: "flex items-center gap-2 rounded bg-sky-600 px-5 py-3 font-bold text-white hover:shadow-lg",
   variants: {
     variant: {
       success: "bg-green-500 hover:shadow-lg",
@@ -44,8 +44,8 @@ const Button: FC<ButtonProps> = ({
 }) => {
   return (
     <button className={button({ variant, rounded, size })} {...props}>
-      {children}
       {icon}
+      {children}
     </button>
   );
 };
