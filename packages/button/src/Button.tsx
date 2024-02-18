@@ -28,6 +28,9 @@ const button = tv({
       lg: "px-6 py-4 text-lg",
       xl: "px-7 py-5 text-xl",
     },
+    isLoading: {
+      true: "opacity-80 cursor-not-allowed"
+    }
   },
 });
 
@@ -43,7 +46,7 @@ const Button: FC<ButtonProps> = ({
   ...props
 }) => {
   return (
-    <button className={button({ variant, rounded, size })} {...props}>
+    <button className={button({ variant, rounded, size, isLoading })} {...props}>
       {icon}
       {children}
     </button>
