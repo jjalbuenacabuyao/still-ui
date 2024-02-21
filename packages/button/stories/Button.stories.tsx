@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
-import Button from "../src/Button";
-import {PaperPlaneIcon} from "@radix-ui/react-icons"
+import { Button } from "../src";
+import { PaperPlaneIcon } from "@radix-ui/react-icons";
 import React from "react";
 
 const meta = {
@@ -54,7 +54,7 @@ export const Rounded: Story = {
 export const Small: Story = {
   render: (props) => <Button {...props}>Small</Button>,
   args: {
-    size: "sm"
+    size: "sm",
   },
 };
 
