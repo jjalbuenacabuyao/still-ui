@@ -10,7 +10,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const button = tv({
-  base: "flex items-center gap-2 rounded bg-sky-600 px-5 py-3 font-bold text-white hover:shadow-lg",
+  base: "flex items-center gap-3 rounded bg-sky-600 px-5 py-3 font-bold text-white hover:shadow-lg",
   variants: {
     variant: {
       success: "bg-green-500 hover:shadow-lg",
