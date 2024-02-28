@@ -1,0 +1,57 @@
+{
+  "name": "@still-ui/alert-dialog",
+  "version": "1.0.0",
+  "description": "Highly customizable and accessible Alert Dialog component.",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "author": "Joel Cabuyao <joelcabuyao1@gmail.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "alert",
+    "react",
+    "accordion",
+    "radixui",
+    "tailwindcss",
+    "ui",
+    "component",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jjalbuenacabuyao/still-ui.git",
+    "directory": "packages/alert-dialog"
+  },
+  "scripts": {
+    "build": "tsup src --dts",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "dependencies": {
+    "@radix-ui/react-alert-dialog": "^1.0.5",
+    "@radix-ui/react-icons": "^1.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-variants": "^0.1.20"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "tsup": "^8.0.1",
+    "typescript": "^5.2.2"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
+  }
+}
