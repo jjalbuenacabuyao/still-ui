@@ -31,6 +31,7 @@
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.0.5",
     "@radix-ui/react-icons": "^1.3.0",
+    "@still-ui/button": "^1.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-variants": "^0.1.20"
