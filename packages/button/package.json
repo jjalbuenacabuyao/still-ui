@@ -1,6 +1,6 @@
 {
   "name": "@still-ui/button",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Highly customizable and accessible Button component.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
