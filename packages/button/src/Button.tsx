@@ -46,7 +46,7 @@ const Button: FC<ButtonProps> = ({
   ...props
 }) => {
   return (
-    <button className={button({ variant, rounded, size, isLoading })} {...props}>
+    <button className={button({ variant, rounded, size, isLoading, class: className })} {...props}>
       {icon}
       {children}
     </button>
