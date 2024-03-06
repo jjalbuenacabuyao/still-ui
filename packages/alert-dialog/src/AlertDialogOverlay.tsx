@@ -6,14 +6,11 @@ const overlay = tv({
 });
 
 const AlertDialogOverlay = ({
-  children,
   className,
   ...props
 }: AlertDialogOverlayProps) => {
   return (
-    <Overlay className={overlay({ class: className })} {...props}>
-      {children}
-    </Overlay>
+    <Overlay className={overlay({ class: className })} {...props} />
   );
 };
 
