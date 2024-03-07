@@ -3,10 +3,11 @@ import {
   AccordionSingleProps,
   Root,
 } from "@radix-ui/react-accordion";
-import { FC } from "react";
+import { ElementRef } from "react";
 import { AccordionContext } from "./hooks/AccordionContext";
 import { tv } from "tailwind-variants";
 import { AccordionOptions } from "./types";
+import React from "react";
 
 export type AccordionRootProps = AccordionOptions &
   (AccordionMultipleProps | AccordionSingleProps);
@@ -65,35 +66,29 @@ const root = tv({
     {
       splitted: true,
       ui: "neumorphic",
-      class:
-        "bg-initial shadow-none",
+      class: "bg-initial shadow-none",
     },
   ],
 });
 
-const AccordionRoot: FC<AccordionRootProps> = ({
-  children,
-  className,
-  splitted,
-  bordered,
-  ui,
-  ...props
-}) => {
-  return (
-    <Root
-      className={root({
-        splitted,
-        bordered: bordered,
-        ui: ui,
-        class: className,
-      })}
-      {...props}
-    >
-      <AccordionContext.Provider value={{ splitted, bordered, ui }}>
-        {children}
-      </AccordionContext.Provider>
-    </Root>
-  );
-};
+const AccordionRoot = React.forwardRef<
+  ElementRef<typeof Root>,
+  AccordionRootProps
+>(({ bordered, children, className, splitted, ui, ...props }, ref) => (
+  <Root
+    ref={ref}
+    {...props}
+    className={root({
+      splitted: splitted,
+      bordered: bordered,
+      ui: ui,
+      class: className,
+    })}
+  >
+    <AccordionContext.Provider value={{ splitted, bordered, ui }}>
+      {children}
+    </AccordionContext.Provider>
+  </Root>
+));
 
 export default AccordionRoot;
