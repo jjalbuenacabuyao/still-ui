@@ -1,4 +1,4 @@
-import { useContext, FC, ElementRef, ComponentPropsWithoutRef } from "react";
+import { useContext, ElementRef, ComponentPropsWithoutRef } from "react";
 import { AccordionContext } from "./hooks/AccordionContext";
 import { tv } from "tailwind-variants";
 import React from "react";
