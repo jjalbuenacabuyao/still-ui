@@ -1,12 +1,11 @@
-import {
-  AccordionContentProps as RadixAccordionContentProps,
-} from "@radix-ui/react-accordion";
-import { FC, useContext } from "react";
+import { Content } from "@radix-ui/react-accordion";
+import { Children, ComponentPropsWithoutRef, ElementRef, useContext } from "react";
 import { AccordionContext } from "./hooks/AccordionContext";
 import { tv } from "tailwind-variants";
+import React from "react";
 
 const content = tv({
-  base: "grid grid-rows-[0fr] px-4 pb-0 text-justify text-sm transition-[grid-template-rows] ease-[cubic-bezier(0.87,0,0.13,1)] group-data-[state=open]:grid-rows-[1fr] group-data-[state=open]:pb-4",
+  base: "data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp overflow-hidden px-4 pb-0 text-justify text-sm",
   variants: {
     ui: {
       brutal: "",
@@ -16,18 +15,21 @@ const content = tv({
   },
 });
 
-const AccordionContent: FC<RadixAccordionContentProps> = ({
-  className,
-  children,
-  ...props
-}) => {
+const AccordionContent = React.forwardRef<
+  ElementRef<typeof Content>,
+  ComponentPropsWithoutRef<typeof Content>
+>(({ children, className, ...props }, ref) => {
   const options = useContext(AccordionContext);
 
   return (
-    <div className={content({ class: className, ui: options.ui })} {...props}>
-        <p className="overflow-hidden">{children}</p>
-    </div>
+    <Content
+      className={content({ class: className, ui: options.ui })}
+      ref={ref}
+      {...props}
+    >
+      <p className="pb-4">{children}</p>
+    </Content>
   );
-};
+});
 
 export default AccordionContent;
