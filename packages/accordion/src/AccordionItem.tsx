@@ -1,10 +1,8 @@
-import {
-  AccordionItem as Item,
-  AccordionItemProps,
-} from "@radix-ui/react-accordion";
-import { useContext, FC } from "react";
+import { useContext, FC, ElementRef, ComponentPropsWithoutRef } from "react";
 import { AccordionContext } from "./hooks/AccordionContext";
 import { tv } from "tailwind-variants";
+import React from "react";
+import { Item } from "@radix-ui/react-accordion";
 
 const item = tv({
   base: "group border-b border-b-slate-200 last:border-0",
@@ -22,7 +20,7 @@ const item = tv({
     {
       splitted: true,
       ui: undefined,
-      class: "shadow-slate-100"
+      class: "shadow-slate-100",
     },
     {
       splitted: true,
@@ -47,29 +45,23 @@ const item = tv({
     {
       splitted: true,
       ui: "neumorphic",
-      class: "shadow-[-5px_5px_20px_#9ca3af,5px_-5px_20px_#ffffff] border-0",
+      class: "border-0 shadow-[-5px_5px_20px_#9ca3af,5px_-5px_20px_#ffffff]",
     },
   ],
 });
 
-const AccordionItem: FC<AccordionItemProps> = ({
-  children,
-  className,
-  value,
-  ...props
-}) => {
-  const options = useContext(AccordionContext);
-  const { splitted, ui } = options;
-
+const AccordionItem = React.forwardRef<
+  ElementRef<typeof Item>,
+  ComponentPropsWithoutRef<typeof Item>
+>(({ className, ...props }, ref) => {
+  const { splitted, ui } = useContext(AccordionContext);
   return (
     <Item
+      ref={ref}
       className={item({ splitted, ui: ui, class: className })}
-      value={value}
       {...props}
-    >
-      {children}
-    </Item>
+    />
   );
-};
+});
 
 export default AccordionItem;
