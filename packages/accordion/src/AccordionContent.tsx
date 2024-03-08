@@ -1,5 +1,5 @@
 import { Content } from "@radix-ui/react-accordion";
-import { Children, ComponentPropsWithoutRef, ElementRef, useContext } from "react";
+import { ComponentPropsWithoutRef, ElementRef, useContext } from "react";
 import { AccordionContext } from "./hooks/AccordionContext";
 import { tv } from "tailwind-variants";
 import React from "react";
