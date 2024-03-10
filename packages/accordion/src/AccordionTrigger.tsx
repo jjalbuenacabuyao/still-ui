@@ -3,10 +3,11 @@ import {
   AccordionTrigger as Trigger,
   AccordionHeader,
 } from "@radix-ui/react-accordion";
-import { useContext, FC, ReactNode } from "react";
+import { useContext, ReactNode, ElementRef } from "react";
 import { AccordionContext } from "./hooks/AccordionContext";
 import { tv } from "tailwind-variants";
 import {ChevronDownIcon} from "@radix-ui/react-icons"
+import React from "react";
 
 type AccordionTriggerProps = {
   title: string | ReactNode;
@@ -40,14 +41,15 @@ const trigger = tv({
 
 const { wrapper, innerWrapper, tvTitle, tvSubtitle, tvIcon } = trigger();
 
-const AccordionTrigger: FC<
+const AccordionTrigger = React.forwardRef<
+  ElementRef<typeof Trigger>,
   RadixAccordionTriggerProps & AccordionTriggerProps
-> = ({ className, title, subtitle, icon, ...props }) => {
-  const { splitted, ui, } = useContext(AccordionContext);
-
+>(({ className, icon, subtitle, title, ...props }, ref) => {
+  const { splitted, ui } = useContext(AccordionContext);
   return (
     <AccordionHeader>
       <Trigger
+        ref={ref}
         className={wrapper({ class: className, ui, splitted })}
         {...props}
       >
@@ -59,6 +61,6 @@ const AccordionTrigger: FC<
       </Trigger>
     </AccordionHeader>
   );
-};
+});
 
 export default AccordionTrigger;
