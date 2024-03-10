@@ -1,22 +1,15 @@
-import { AlertDialogCancelProps, Cancel } from "@radix-ui/react-alert-dialog";
+import { Cancel } from "@radix-ui/react-alert-dialog";
 import { Button } from "@still-ui/button";
+import React, { ComponentPropsWithoutRef, ElementRef } from "react";
 
-type CancelProps = {
-  buttonType?: "success" | "danger" | "outline" | "ghost";
-};
 
-const AlertDialogCancel = ({
-  buttonType,
-  children,
-  ...props
-}: AlertDialogCancelProps & CancelProps) => {
-  return (
-    <Cancel asChild>
-      <Button variant={buttonType} {...props}>
-        {children}
-      </Button>
-    </Cancel>
-  );
-};
+const AlertDialogCancel = React.forwardRef<
+  ElementRef<typeof Cancel>,
+  ComponentPropsWithoutRef<typeof Cancel>
+>(({ ...props }, ref) => (
+  <Cancel asChild ref={ref}>
+    <Button {...props} />
+  </Cancel>
+));
 
 export default AlertDialogCancel;

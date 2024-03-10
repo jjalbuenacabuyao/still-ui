@@ -1,27 +1,22 @@
 import {
-  AlertDialogDescriptionProps,
   Description,
 } from "@radix-ui/react-alert-dialog";
+import React, { ComponentPropsWithoutRef, ElementRef } from "react";
 import { tv } from "tailwind-variants";
 
-type DescriptionProps = {
-  description: string | React.ReactNode;
-};
-
-const descriptionClass = tv({
+const description = tv({
   base: "text-justify leading-normal",
 });
 
-const AlertDialogDescription = ({
-  className,
-  description,
-  ...props
-}: AlertDialogDescriptionProps & DescriptionProps) => {
-  return (
-    <Description className={descriptionClass({ class: className })} {...props}>
-      {description}
-    </Description>
-  );
-};
+const AlertDialogDescription = React.forwardRef<
+  ElementRef<typeof Description>,
+  ComponentPropsWithoutRef<typeof Description>
+>(({ className, ...props }, ref) => (
+  <Description
+    className={description({ class: className })}
+    {...props}
+    ref={ref}
+  />
+));
 
 export default AlertDialogDescription;
