@@ -20,72 +20,23 @@ const root = tv({
     bordered: {
       true: "rounded-md border border-slate-200 p-3 shadow-md shadow-slate-100",
     },
-    ui: {
-      brutal: "rounded-lg",
-      glassmorphic:
-        "before:absolute before:-right-4 before:-top-4 before:-z-10 before:block before:h-36 before:w-36 before:rounded-full before:bg-sky-500 after:absolute after:-bottom-4 after:-left-4 after:-z-10 after:block after:h-36 after:w-36 after:rounded-full after:bg-sky-800",
-      neumorphic:
-        "rounded-md bg-slate-100 shadow-[-20px_20px_41px_#9ca3af,20px_-20px_41px_#ffffff]",
-    },
   },
-  compoundVariants: [
-    {
-      splitted: undefined,
-      ui: "brutal",
-      class:
-        "z-10 bg-white outline outline-2 outline-black drop-shadow-[4px_6px_#000]",
-    },
-    {
-      splitted: true,
-      ui: "brutal",
-      class: "gap-6",
-    },
-    {
-      splitted: undefined,
-      bordered: true,
-      ui: "brutal",
-      class: "rounded-lg shadow-none",
-    },
-    {
-      splitted: true,
-      bordered: true,
-      ui: "brutal",
-      class: "rounded-2xl p-5",
-    },
-    {
-      splitted: undefined,
-      ui: "glassmorphic",
-      class:
-        "rounded-md border border-white shadow-[0_4px_30px_rgba(0,0,0,0.1)]",
-    },
-    {
-      bordered: true,
-      ui: "glassmorphic",
-      class: "rounded-md border-white p-0 shadow-none",
-    },
-    {
-      splitted: true,
-      ui: "neumorphic",
-      class: "bg-initial shadow-none",
-    },
-  ],
 });
 
 const AccordionRoot = React.forwardRef<
   ElementRef<typeof Root>,
   AccordionRootProps
->(({ bordered, children, className, splitted, ui, ...props }, ref) => (
+>(({ bordered, children, className, splitted, ...props }, ref) => (
   <Root
     ref={ref}
     {...props}
     className={root({
-      splitted: splitted,
-      bordered: bordered,
-      ui: ui,
+      splitted,
+      bordered,
       class: className,
     })}
   >
-    <AccordionContext.Provider value={{ splitted, bordered, ui }}>
+    <AccordionContext.Provider value={{ splitted, bordered }}>
       {children}
     </AccordionContext.Provider>
   </Root>
