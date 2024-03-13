@@ -1,9 +1,7 @@
-import { AlertDialogPortalProps, Portal } from "@radix-ui/react-alert-dialog"
+import { AlertDialogPortalProps, Portal } from "@radix-ui/react-alert-dialog";
 
-const AlertDialogPortal = ({children, ...props}: AlertDialogPortalProps) => {
-  return (
-    <Portal {...props}>{children}</Portal>
-  )
-}
+const AlertDialogPortal = ({ ...props }: AlertDialogPortalProps) => {
+  return <Portal {...props} />;
+};
 
-export default AlertDialogPortal
+export default AlertDialogPortal;

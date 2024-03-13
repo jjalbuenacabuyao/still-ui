@@ -1,11 +1,7 @@
-import { AlertDialogProps, Root } from '@radix-ui/react-alert-dialog'
+import { AlertDialogProps, Root } from "@radix-ui/react-alert-dialog";
 
-const AlertDialogRoot = ({children, ...props}: AlertDialogProps) => {
-  return (
-    <Root {...props}>
-      {children}
-    </Root>
-  )
-}
+const AlertDialogRoot = ({ ...props }: AlertDialogProps) => {
+  return <Root {...props} />;
+};
 
-export default AlertDialogRoot
+export default AlertDialogRoot;
