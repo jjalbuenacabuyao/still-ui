@@ -133,23 +133,7 @@ export default Accordion;
 ```
 
 
-### 5. Using built-in UI design
-There are three built-in UI design available for accordion: brutal, glassmorphic, and neumorphic. To use the built-in design, set the <b>ui</b> prop to <b>"brutal"</b>, <b>"glassmorphic"</b>, or <b>"neumorphic"</b>.
-
-```tsx
-const Accordion = () => {
-  return (
-    <AccordionRoot type="multiple" ui="brutal" collapsible>
-      {/*Contents*/}
-    </AccordionRoot>
-  );
-};
-
-export default Accordion;
-```
-
-
-### 6. Using custom styles
+### 5. Using custom styles
 Still-UI is built on top of TailwindCSS so anyone can freely modify the styles to match on your brand. This is done by using the <b>className</b> prop.
 
 ```tsx
