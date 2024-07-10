@@ -12,13 +12,13 @@ export type AccordionRootProps = AccordionOptions &
   (AccordionMultipleProps | AccordionSingleProps);
 
 const root = tv({
-  base: "group/accordion",
+  base: "group/accordion text-slate-800",
   variants: {
     splitted: {
       true: "flex flex-col gap-4 border-0 p-0 shadow-none",
     },
     bordered: {
-      true: "rounded-md border border-slate-200 p-3 shadow-md shadow-slate-100",
+      true: "rounded-md border border-slate-300 px-3 shadow-md shadow-slate-100",
     },
   },
 });

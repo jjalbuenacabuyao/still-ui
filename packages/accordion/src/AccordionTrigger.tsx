@@ -14,7 +14,7 @@ type AccordionTriggerProps = {
 const trigger = tv({
   slots: {
     wrapper:
-      "group/trigger flex w-full items-center justify-between gap-4 p-4 text-left group-data-[splitted=true]/accordion:p-6",
+      "group/trigger flex w-full items-center justify-between gap-4 py-3 text-left group-data-[splitted=true]/accordion:p-5",
     chevronIcon: "transition-transform group-data-[state=open]/trigger:rotate-180",
   }
 });
@@ -32,7 +32,7 @@ const AccordionTrigger = React.forwardRef<
         {...props}
       >
         {children}
-        {icon ? icon : <ChevronDownIcon className={chevronIcon()} />}
+        {icon ? icon : <ChevronDownIcon width={20} height={20} className={chevronIcon()} />}
       </Trigger>
   );
 });

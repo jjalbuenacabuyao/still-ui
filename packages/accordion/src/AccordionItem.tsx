@@ -5,8 +5,8 @@ import { Item } from "@radix-ui/react-accordion";
 
 const item = tv({
   base: [
-    "group border-b border-b-slate-200 last:border-0",
-    "group-data-[splitted=true]/accordion:rounded group-data-[splitted=true]/accordion:border group-data-[splitted=true]/accordion:border-slate-200 group-data-[splitted=true]/accordion:shadow-md group-data-[splitted=true]/accordion:last:border",
+    "border-b border-b-slate-300 last:border-0",
+    "group-data-[splitted=true]/accordion:rounded-lg group-data-[splitted=true]/accordion:border group-data-[splitted=true]/accordion:border-slate-300",
   ],
 });
 
