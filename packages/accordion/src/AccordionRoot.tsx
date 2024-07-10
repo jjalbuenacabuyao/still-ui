@@ -4,7 +4,6 @@ import {
   Root,
 } from "@radix-ui/react-accordion";
 import { ElementRef } from "react";
-import { AccordionContext } from "./hooks/AccordionContext";
 import { tv } from "tailwind-variants";
 import { AccordionOptions } from "./types";
 import React from "react";
@@ -13,6 +12,7 @@ export type AccordionRootProps = AccordionOptions &
   (AccordionMultipleProps | AccordionSingleProps);
 
 const root = tv({
+  base: "group/accordion",
   variants: {
     splitted: {
       true: "flex flex-col gap-4 border-0 p-0 shadow-none",
@@ -35,10 +35,9 @@ const AccordionRoot = React.forwardRef<
       bordered,
       class: className,
     })}
+    data-splitted={splitted}
   >
-    <AccordionContext.Provider value={{ splitted, bordered }}>
-      {children}
-    </AccordionContext.Provider>
+    {children}
   </Root>
 ));
 
