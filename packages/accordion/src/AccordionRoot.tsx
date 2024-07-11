@@ -21,6 +21,13 @@ const root = tv({
       true: "rounded-md border border-slate-300 px-3 shadow-md shadow-slate-100",
     },
   },
+  compoundVariants: [
+    {
+      splitted: true,
+      bordered: true,
+      className: "py-3"
+    }
+  ]
 });
 
 const AccordionRoot = React.forwardRef<
