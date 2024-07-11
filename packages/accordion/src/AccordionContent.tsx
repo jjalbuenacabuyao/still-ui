@@ -4,7 +4,7 @@ import { tv } from "tailwind-variants";
 import React from "react";
 
 const content = tv({
-  base: "overflow-hidden pb-0 text-justify text-sm data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown  group-data-[splitted=true]/accordion:px-5",
+  base: "overflow-hidden text-justify text-sm data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown  group-data-[splitted]/accordion:px-4",
 });
 
 const AccordionContent = React.forwardRef<
