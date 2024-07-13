@@ -25,15 +25,21 @@ const root = tv({
     {
       splitted: true,
       bordered: true,
-      className: "py-3"
-    }
-  ]
+      className: "py-3",
+    },
+    {
+      elevated: true,
+      bordered: true,
+      class:
+        "data-[elevated=true]/accordion:shadow-sm data-[elevated=true]/accordion:shadow-slate-200",
+    },
+  ],
 });
 
 const AccordionRoot = React.forwardRef<
   ElementRef<typeof Root>,
   AccordionRootProps
->(({ bordered, children, className, splitted, ...props }, ref) => (
+>(({ bordered, children, className, splitted, elevated, ...props }, ref) => (
   <Root
     ref={ref}
     {...props}
@@ -43,6 +49,7 @@ const AccordionRoot = React.forwardRef<
       class: className,
     })}
     data-splitted={splitted}
+    data-elevated={elevated}
   >
     {children}
   </Root>
