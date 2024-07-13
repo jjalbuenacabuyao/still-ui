@@ -7,6 +7,7 @@ const item = tv({
   base: [
     "border-b border-b-slate-300 last:border-0",
     "group-data-[splitted=true]/accordion:rounded-lg group-data-[splitted=true]/accordion:border group-data-[splitted=true]/accordion:border-slate-300",
+    "group-data-[elevated=true]/accordion:group-data-[splitted=true]/accordion:shadow-slate-100 group-data-[elevated=true]/accordion:group-data-[splitted=true]/accordion:shadow-md",
   ],
 });
 
