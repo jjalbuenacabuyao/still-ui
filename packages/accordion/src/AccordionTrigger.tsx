@@ -14,9 +14,10 @@ type AccordionTriggerProps = {
 const trigger = tv({
   slots: {
     wrapper:
-      "group/trigger flex w-full items-center justify-between gap-4 py-3 text-left group-data-[splitted]/accordion:p-4",
-    chevronIcon: "transition-transform group-data-[state=open]/trigger:rotate-180",
-  }
+      "group/trigger flex w-full items-center justify-between gap-4 py-3 text-left group-data-[splitted=true]/accordion:p-4",
+    chevronIcon:
+      "transition-transform group-data-[state=open]/trigger:rotate-180",
+  },
 });
 
 const { wrapper, chevronIcon } = trigger();
