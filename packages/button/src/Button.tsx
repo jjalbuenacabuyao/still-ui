@@ -10,7 +10,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const button = tv({
-  base: "flex items-center gap-3 rounded bg-sky-600 px-5 py-3 font-bold text-white hover:shadow-lg transition-shadow",
+  base: "flex items-center rounded bg-sky-600 px-6 py-2 font-bold tracking-wider text-white hover:shadow-lg transition-shadow",
   variants: {
     variant: {
       success: "bg-green-500 hover:shadow-lg",
@@ -23,10 +23,10 @@ const button = tv({
       true: "rounded-full",
     },
     size: {
-      sm: "px-4 py-2 text-sm font-medium",
+      sm: "px-4 py-2 text-sm",
       md: "",
-      lg: "px-6 py-4 text-lg",
-      xl: "px-7 py-5 text-xl",
+      lg: "px-6 py-3 text-lg",
+      xl: "px-7 py-4 text-xl",
     },
     isLoading: {
       true: "opacity-80 cursor-not-allowed"
