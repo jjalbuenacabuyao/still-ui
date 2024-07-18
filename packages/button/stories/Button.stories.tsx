@@ -81,8 +81,9 @@ export const XL: Story = {
 
 export const WithIcon: Story = {
   render: (props) => (
-    <Button icon={<PaperPlaneIcon />} {...props}>
+    <Button {...props}>
       Send
+      <PaperPlaneIcon />
     </Button>
   ),
 };
