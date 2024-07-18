@@ -1,8 +1,7 @@
-import { ButtonHTMLAttributes, FC, ReactNode } from "react";
+import { ButtonHTMLAttributes, FC } from "react";
 import { tv } from "tailwind-variants";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  icon?: ReactNode;
   isLoading?: boolean;
   rounded?: boolean;
   size?: "sm" | "md" | "lg" | "xl";
@@ -10,7 +9,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const button = tv({
-  base: "flex items-center rounded bg-sky-600 px-6 py-2 font-bold tracking-wider text-white hover:shadow-lg transition-shadow",
+  base: "flex items-center gap-2 rounded bg-sky-600 px-6 py-2 font-bold tracking-wider text-white hover:shadow-lg transition-shadow",
   variants: {
     variant: {
       success: "bg-green-500 hover:shadow-lg",
@@ -38,7 +37,6 @@ const Button: FC<ButtonProps> = ({
   children,
   className,
   disabled,
-  icon,
   isLoading,
   rounded,
   size = "md",
@@ -47,7 +45,6 @@ const Button: FC<ButtonProps> = ({
 }) => {
   return (
     <button className={button({ variant, rounded, size, isLoading, class: className })} {...props}>
-      {icon}
       {children}
     </button>
   );
