@@ -7,6 +7,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: "sm" | "md" | "lg" | "xl";
   variant?: "success" | "danger" | "outline" | "ghost";
   elevated?: boolean;
+  iconOnly?: boolean;
 }
 
 const button = tv({
@@ -33,6 +34,9 @@ const button = tv({
     },
     elevated: {
       true: "shadow-md"
+    },
+    iconOnly: {
+      true: "rounded-full p-3"
     }
   },
 });
@@ -46,10 +50,11 @@ const Button: FC<ButtonProps> = ({
   elevated,
   size = "md",
   variant,
+  iconOnly,
   ...props
 }) => {
   return (
-    <button className={button({ variant, rounded, size, isLoading, elevated, class: className })} {...props}>
+    <button className={button({ variant, rounded, size, isLoading, elevated, iconOnly, class: className })} {...props}>
       {children}
     </button>
   );
