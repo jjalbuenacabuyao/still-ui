@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Button } from "../src";
-import { PaperPlaneIcon } from "@radix-ui/react-icons";
+import { PaperPlaneIcon, GearIcon } from "@radix-ui/react-icons";
 import React from "react";
 
 const meta = {
@@ -87,3 +87,12 @@ export const WithIcon: Story = {
     </Button>
   ),
 };
+
+export const IconOnly: Story = {
+  render: (props) => (
+    <Button iconOnly {...props}>
+      <GearIcon />
+    </Button>
+  ),
+};
+
