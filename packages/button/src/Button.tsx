@@ -33,7 +33,7 @@ const button = tv({
       true: "opacity-80 cursor-not-allowed"
     },
     elevated: {
-      true: "shadow-md"
+      true: "shadow-md shadow-black/[0.3]"
     },
     iconOnly: {
       true: "rounded-full p-3"
