@@ -5,6 +5,6 @@ import { ComponentPropsWithoutRef, ElementRef } from "react";
 const AlertDialogTrigger = React.forwardRef<
   ElementRef<typeof Trigger>,
   ComponentPropsWithoutRef<typeof Trigger>
->(({ ...props }, ref) => <Trigger asChild {...props} ref={ref} />);
+>(({ children, ...props }, ref) => <Trigger {...props} ref={ref}>{children}</Trigger>);
 
 export default AlertDialogTrigger;
